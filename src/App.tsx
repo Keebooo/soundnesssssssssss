@@ -190,7 +190,6 @@ function App() {
           {/* Previous Roles */}
           <div className={`bg-gradient-to-br from-gray-900/80 to-black/70 backdrop-blur-sm rounded-2xl shadow-2xl shadow-yellow-500/30 p-6 border border-yellow-600/40 ring-2 ring-yellow-400/50 transition-all duration-1000 hover:shadow-yellow-500/50 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="flex items-center mb-6">
-              <Calendar className="w-6 h-6 text-yellow-400 mr-3" />
               <h3 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">Riwayat Role</h3>
             </div>
             <div className="space-y-3">
@@ -218,7 +217,6 @@ function App() {
           {/* Upcoming Roles */}
           <div className={`bg-gradient-to-br from-gray-900/80 to-black/70 backdrop-blur-sm rounded-2xl shadow-2xl shadow-amber-500/30 p-6 border border-amber-600/40 ring-2 ring-amber-400/50 transition-all duration-1000 hover:shadow-amber-500/50 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="flex items-center mb-6">
-              <Calendar className="w-6 h-6 text-amber-400 mr-3" />
               <h3 className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">Jadwal Mendatang</h3>
             </div>
             <div className="space-y-3">
