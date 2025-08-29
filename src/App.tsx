@@ -45,17 +45,17 @@ function App() {
     // Buat date object untuk midnight WIB
     const wibDate = new Date(year, month, day);
     
-    // Reference: Hari ini = Blu (index 2)
+    // Reference: Hari ini = Wava (index 3)
     const today = new Date();
     const referenceDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    const bluIndex = 2;
+    const wavaIndex = 3;
     
     // Hitung selisih hari
     const timeDiff = wibDate.getTime() - referenceDate.getTime();
     const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
     
     // Hitung index role
-    let roleIndex = (bluIndex + dayDiff) % roles.length;
+    let roleIndex = (wavaIndex + dayDiff) % roles.length;
     if (roleIndex < 0) {
       roleIndex += roles.length;
     }
