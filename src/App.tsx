@@ -63,23 +63,7 @@ function App() {
   };
 
   const getCurrentRole = (): RoleData => {
-    const today = new Date();
-    const todayWib = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    
-    // Reference: Tanggal 30 Januari 2025 = Echo (index 4)
-    const referenceDate = new Date(2025, 0, 30);
-    
-    // Hitung selisih hari dari reference date
-    const timeDiff = todayWib.getTime() - referenceDate.getTime();
-    const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    
-    // Hitung index role (Echo = index 4 pada tanggal 30)
-    let roleIndex = (4 + dayDiff) % roles.length;
-    if (roleIndex < 0) {
-      roleIndex += roles.length;
-    }
-    
-    return roles[roleIndex];
+    return getRoleForDate(new Date());
   };
 
   const getUpcomingRoles = (days: number = 7): Array<{date: Date, role: RoleData}> => {
