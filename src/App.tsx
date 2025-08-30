@@ -45,16 +45,16 @@ function App() {
     // Buat date object untuk midnight WIB
     const wibDate = new Date(year, month, day);
     
-    // Reference: Tanggal 31 Januari 2025 = Zippy (index 0)
-    const referenceDate = new Date(2025, 0, 31); // 31 Januari 2025
-    const zippyIndex = 0;
+    // Reference: Tanggal 30 Januari 2025 = Echo (index 4)
+    const referenceDate = new Date(2025, 0, 30); // 30 Januari 2025
+    const echoIndex = 4;
     
     // Hitung selisih hari dari reference date
     const timeDiff = wibDate.getTime() - referenceDate.getTime();
     const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
     
     // Hitung index role
-    let roleIndex = (zippyIndex + dayDiff) % roles.length;
+    let roleIndex = (echoIndex + dayDiff) % roles.length;
     if (roleIndex < 0) {
       roleIndex += roles.length;
     }
@@ -63,19 +63,18 @@ function App() {
   };
 
   const getCurrentRole = (): RoleData => {
-    // Untuk hari ini, langsung return Zippy
     const today = new Date();
     const todayWib = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     
-    // Reference: Tanggal 31 Januari 2025 = Zippy (index 0)
-    const referenceDate = new Date(2025, 0, 31);
+    // Reference: Tanggal 30 Januari 2025 = Echo (index 4)
+    const referenceDate = new Date(2025, 0, 30);
     
     // Hitung selisih hari dari reference date
     const timeDiff = todayWib.getTime() - referenceDate.getTime();
     const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
     
-    // Hitung index role (Zippy = index 0 pada tanggal 31)
-    let roleIndex = (0 + dayDiff) % roles.length;
+    // Hitung index role (Echo = index 4 pada tanggal 30)
+    let roleIndex = (4 + dayDiff) % roles.length;
     if (roleIndex < 0) {
       roleIndex += roles.length;
     }
