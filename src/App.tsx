@@ -45,11 +45,12 @@ function App() {
     // Buat date object untuk midnight WIB
     const wibDate = new Date(year, month, day);
     
-    // Reference: Tanggal 30 Januari 2025 = Echo (index 4)
-    const referenceDate = new Date(2025, 0, 30); // 30 Januari 2025
+    // Reference: Hari ini = Wava (index 3)
+    const today = new Date();
+    const referenceDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     const echoIndex = 4;
     
-    // Hitung selisih hari dari reference date
+    // Hitung selisih hari
     const timeDiff = wibDate.getTime() - referenceDate.getTime();
     const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
     
@@ -63,7 +64,9 @@ function App() {
   };
 
   const getCurrentRole = (): RoleData => {
-    return getRoleForDate(new Date());
+    // Gunakan waktu WIB untuk menentukan role hari ini
+    const now = new Date();
+    return getRoleForDate(now);
   };
 
   const getUpcomingRoles = (days: number = 7): Array<{date: Date, role: RoleData}> => {
